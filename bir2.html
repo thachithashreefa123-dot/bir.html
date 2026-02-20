@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Birthday Bash 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right,#ff9ec4,#ffc3e6);
+    text-align:center;
+    color:#333;
+}
+
+/* NAVBAR */
+nav{
+    background:white;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav h2{
+    color:#ff4d88;
+    margin:0;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav ul li{
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* SECTIONS */
+section{
+    padding:60px 20px;
+}
+
+/* HOME */
+.home{
+    background:#ffb6d9;
+}
+
+.home h1{
+    font-size:40px;
+}
+
+.btn{
+    background:linear-gradient(to right,#ff4d88,#00c6ff);
+    padding:12px 25px;
+    border:none;
+    border-radius:20px;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+/* COUPLE IMAGE */
+.couple img{
+    width:250px;
+    border-radius:20px;
+    margin:10px;
+}
+
+/* MEMORIES */
+.gallery img{
+    width:200px;
+    margin:10px;
+    border-radius:15px;
+}
+
+/* QUOTES */
+.quote-box{
+    font-size:20px;
+    font-style:italic;
+    margin-top:20px;
+}
+
+/* PUZZLE */
+.puzzle button{
+    padding:10px;
+    margin:5px;
+    font-size:20px;
+}
+
+/* MUSIC */
+.music audio{
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h2>🎂 Birthday Bash</h2>
+    <ul>
+        <li onclick="scrollToSection('home')">Home</li>
+        <li onclick="scrollToSection('memories')">Memories</li>
+        <li onclick="scrollToSection('puzzle')">Puzzle</li>
+        <li onclick="scrollToSection('quotes')">Quotes</li>
+        <li onclick="scrollToSection('music')">Music</li>
+        <li onclick="scrollToSection('fun')">Fun</li>
+    </ul>
+</nav>
+
+<!-- HOME -->
+<section class="home" id="home">
+    <h1>Happy Birthday Baby 🎉</h1>
+    <p>Let's celebrate this special day together 💕</p>
+    <button class="btn" onclick="alert('I Love You Forever ❤️')">Start the Celebration 🎊</button>
+</section>
+
+<!-- COUPLE IMAGE -->
+<section class="couple">
+    <h2>Our Beautiful Moments 💑</h2>
+    <img src="couple1.jpg" alt="Couple Image">
+    <img src="couple2.jpg" alt="Couple Image">
+    <p>You & Me Forever ❤️</p>
+</section>
+
+<!-- MEMORIES -->
+<section class="gallery" id="memories">
+    <h2>Memories 📸</h2>
+    <img src="memory1.jpg">
+    <img src="memory2.jpg">
+    <img src="memory3.jpg">
+</section>
+
+<!-- PUZZLE -->
+<section class="puzzle" id="puzzle">
+    <h2>Mini Love Puzzle 🧩</h2>
+    <p>Click buttons to reveal message</p>
+    <button onclick="showLove()">1</button>
+    <button onclick="showLove()">2</button>
+    <button onclick="showLove()">3</button>
+    <p id="puzzleMessage"></p>
+</section>
+
+<!-- QUOTES -->
+<section id="quotes">
+    <h2>Love Quotes 💌</h2>
+    <div class="quote-box" id="quote">
+        "You are my today and all of my tomorrows."
+    </div>
+    <button class="btn" onclick="changeQuote()">Next Quote</button>
+</section>
+
+<!-- MUSIC -->
+<section class="music" id="music">
+    <h2>Our Song 🎵</h2>
+    <audio controls>
+        <source src="music.mp3" type="audio/mp3">
+    </audio>
+</section>
+
+<!-- FUN -->
+<section id="fun">
+    <h2>Fun Time 🎈</h2>
+    <button class="btn" onclick="confetti()">Click for Surprise 🎊</button>
+</section>
+
+<script>
+
+/* SCROLL */
+function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+/* PUZZLE */
+function showLove(){
+    document.getElementById("puzzleMessage").innerHTML="You Completed My Heart ❤️";
+}
+
+/* QUOTES */
+var quotes=[
+"Every love story is beautiful, but ours is my favorite 💖",
+"You are my sunshine 🌞",
+"I fall in love with you more every day ❤️"
+];
+
+var index=0;
+
+function changeQuote(){
+    index++;
+    if(index>=quotes.length){
+        index=0;
+    }
+    document.getElementById("quote").innerHTML=quotes[index];
+}
+
+/* FUN CONFETTI */
+function confetti(){
+    alert("🎉 Surprise!!! Happiest Birthday My Love 💖🎂");
+}
+
+</script>
+
+</body>
+</html>
