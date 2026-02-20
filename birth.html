@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday My Love 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ff9ec4,#ffc3e6);
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+}
+
+/* NAVBAR */
+nav{
+    background:white;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav h2{
+    color:#ff4d88;
+    margin:0;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav ul li{
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+nav ul li:hover{
+    color:#ff4d88;
+}
+
+/* SECTION */
+section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:#ffb6d9;
+    position:relative;
+}
+
+.hero h1{
+    font-size:45px;
+    animation:fadeIn 2s ease-in-out;
+}
+
+.hero p{
+    font-size:20px;
+    animation:fadeIn 3s ease-in-out;
+}
+
+.btn{
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    background:linear-gradient(to right,#ff4d88,#00c6ff);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:20px;
+    transition:0.4s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+}
+
+/* COUPLE */
+.couple img{
+    width:250px;
+    border-radius:20px;
+    margin:10px;
+    transition:0.5s;
+}
+.couple img:hover{
+    transform:scale(1.1) rotate(3deg);
+}
+
+/* GALLERY */
+.gallery img{
+    width:200px;
+    margin:10px;
+    border-radius:15px;
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
+}
+.gallery img.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* PUZZLE */
+.puzzle button{
+    padding:15px;
+    margin:10px;
+    font-size:18px;
+    border-radius:10px;
+    border:none;
+    background:#ff4d88;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+.puzzle button:hover{
+    background:#ff0066;
+}
+
+/* QUOTES */
+.quote-box{
+    font-size:22px;
+    font-style:italic;
+    transition:0.5s;
+}
+
+/* BALLOONS */
+.balloon{
+    width:40px;
+    height:60px;
+    background:red;
+    border-radius:50%;
+    position:absolute;
+    bottom:-100px;
+    animation:float 10s infinite;
+}
+.balloon:nth-child(1){left:10%; background:#ff4d88;}
+.balloon:nth-child(2){left:30%; background:#00c6ff; animation-duration:12s;}
+.balloon:nth-child(3){left:50%; background:#ffcc00; animation-duration:8s;}
+.balloon:nth-child(4){left:70%; background:#66ff99; animation-duration:11s;}
+.balloon:nth-child(5){left:90%; background:#ff6699; animation-duration:9s;}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    100%{transform:translateY(-110vh);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(-20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h2>🎂 Birthday Bash</h2>
+<ul>
+<li onclick="go('hero')">Home</li>
+<li onclick="go('memories')">Memories</li>
+<li onclick="go('puzzle')">Puzzle</li>
+<li onclick="go('quotes')">Quotes</li>
+<li onclick="go('music')">Music</li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+<h1>Happy Birthday Baby 🎉</h1>
+<p>Let’s celebrate this special day together 💕</p>
+<button class="btn" onclick="startCelebration()">Start Celebration 🎊</button>
+
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+</section>
+
+<!-- COUPLE -->
+<section class="couple">
+<h2>Our Love 💑</h2>
+<img src="couple1.jpg">
+<img src="couple2.jpg">
+</section>
+
+<!-- MEMORIES -->
+<section class="gallery" id="memories">
+<h2>Memories 📸</h2>
+<img src="memory1.jpg">
+<img src="memory2.jpg">
+<img src="memory3.jpg">
+</section>
+
+<!-- PUZZLE -->
+<section class="puzzle" id="puzzle">
+<h2>Love Puzzle 🧩</h2>
+<button onclick="reveal()">Click Me</button>
+<p id="message"></p>
+</section>
+
+<!-- QUOTES -->
+<section id="quotes">
+<h2>Love Quotes 💌</h2>
+<div class="quote-box" id="quote">You are my forever ❤️</div>
+<button class="btn" onclick="nextQuote()">Next Quote</button>
+</section>
+
+<!-- MUSIC -->
+<section id="music">
+<h2>Our Song 🎵</h2>
+<audio controls>
+<source src="music.mp3" type="audio/mp3">
+</audio>
+</section>
+
+<script>
+
+function go(id){
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+/* Celebration */
+function startCelebration(){
+alert("🎉 Happiest Birthday My Love 💖");
+}
+
+/* Reveal Puzzle */
+function reveal(){
+document.getElementById("message").innerHTML="You Complete My Heart ❤️";
+}
+
+/* Quotes Animation */
+var quotes=[
+"I fall in love with you every day 💖",
+"You are my sunshine 🌞",
+"Forever isn’t enough with you ❤️"
+];
+var i=0;
+
+function nextQuote(){
+i++;
+if(i>=quotes.length){i=0;}
+document.getElementById("quote").innerHTML=quotes[i];
+}
+
+/* Gallery Animation */
+window.addEventListener("scroll",function(){
+document.querySelectorAll(".gallery img").forEach(function(img){
+var position=img.getBoundingClientRect().top;
+if(position<window.innerHeight){
+img.classList.add("show");
+}
+});
+});
+
+</script>
+
+</body>
+</html>
